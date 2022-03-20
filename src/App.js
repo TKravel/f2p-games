@@ -3,10 +3,12 @@ import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGames } from './features/gameDataSlice';
 import { useEffect } from 'react';
+import { GameCard } from './components/GameCard';
 
 function App() {
 	const dispatch = useDispatch();
 	const gameStatus = useSelector((state) => state.game.status);
+	const games = useSelector((state) => state.game.games);
 
 	useEffect(() => {
 		if (gameStatus === 'idle') {
@@ -16,20 +18,9 @@ function App() {
 
 	return (
 		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className='App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Learn React
-				</a>
-			</header>
+			{games.map((game) => {
+				return <GameCard key={game.id} gameData={game} />;
+			})}
 		</div>
 	);
 }

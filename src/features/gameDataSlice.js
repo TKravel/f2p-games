@@ -46,8 +46,6 @@ export const counterSlice = createSlice({
 			})
 			.addCase(fetchGames.fulfilled, (state, action) => {
 				state.status = 'succeeded';
-				// Add any fetched posts to the array
-				console.log(action.payload);
 				state.games = action.payload;
 			})
 			.addCase(fetchGames.rejected, (state, action) => {
