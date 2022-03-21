@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchGames } from './features/gameDataSlice';
 import { useEffect } from 'react';
 import { GameCard } from './components/GameCard';
+import { Nav } from './components/Nav';
 
 function App() {
 	const dispatch = useDispatch();
@@ -17,10 +17,15 @@ function App() {
 	}, [gameStatus, dispatch]);
 
 	return (
-		<div className='App'>
-			{games.map((game) => {
-				return <GameCard key={game.id} gameData={game} />;
-			})}
+		<div className='app-wrapper'>
+			<Nav />
+			<main className='App'>
+				<h1>Free to play games</h1>
+
+				{games.map((game) => {
+					return <GameCard key={game.id} gameData={game} />;
+				})}
+			</main>
 		</div>
 	);
 }
