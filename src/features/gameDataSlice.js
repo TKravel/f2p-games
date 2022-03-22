@@ -6,30 +6,20 @@ const initialState = {
 	error: null,
 };
 
-export const fetchGames = createAsyncThunk(
-	'games/fetchGames',
-	async (order) => {
-		let sort = order;
-
-		if (sort === undefined) {
-			sort = 'release-date';
+export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
+	const res = await fetch(
+		`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=alphabetical`,
+		{
+			method: 'GET',
+			headers: {
+				'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
+				'x-rapidapi-key':
+					'3a262d5aa0msh1bb63160e972fd4p1e6060jsn84bbea94f462',
+			},
 		}
-
-		const res = await fetch(
-			`https://free-to-play-games-database.p.rapidapi.com/api/games?sort-by=${sort}`,
-			{
-				method: 'GET',
-				headers: {
-					'x-rapidapi-host':
-						'free-to-play-games-database.p.rapidapi.com',
-					'x-rapidapi-key':
-						'3a262d5aa0msh1bb63160e972fd4p1e6060jsn84bbea94f462',
-				},
-			}
-		).then((response) => response.json());
-		return res;
-	}
-);
+	).then((response) => response.json());
+	return res;
+});
 
 export const gameDataSlice = createSlice({
 	name: 'games',
