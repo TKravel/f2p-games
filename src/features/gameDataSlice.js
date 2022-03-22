@@ -12,7 +12,7 @@ export const fetchGames = createAsyncThunk(
 		let sort = order;
 
 		if (sort === undefined) {
-			sort = 'alphabetical';
+			sort = 'release-date';
 		}
 
 		const res = await fetch(
@@ -31,10 +31,13 @@ export const fetchGames = createAsyncThunk(
 	}
 );
 
-export const counterSlice = createSlice({
+export const gameDataSlice = createSlice({
 	name: 'games',
 	initialState,
 	reducers: {
+		sort: (state, action) => {
+			state.games = [...action.payload];
+		},
 		increment: (state) => {
 			// Redux Toolkit allows us to write "mutating" logic in reducers. It
 			// doesn't actually mutate the state because it uses the Immer library,
@@ -66,6 +69,7 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { sort, increment, decrement, incrementByAmount } =
+	gameDataSlice.actions;
 
-export default counterSlice.reducer;
+export default gameDataSlice.reducer;

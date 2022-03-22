@@ -1,17 +1,35 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchGames } from '../features/gameDataSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchGames, sort } from '../features/gameDataSlice';
+
+function compare(a, b) {
+	if (a.title < b.title) {
+		return -1;
+	}
+	if (a.title > b.title) {
+		return 1;
+	}
+	return 0;
+}
 
 export const Nav = () => {
 	const dispatch = useDispatch();
+	const gameData = useSelector((state) => state.game.games);
 	const [sortBy, setSortBy] = useState('alphabetical');
 
 	const handleChange = (e) => {
 		setSortBy(e.target.value);
+		const sortByOption = e.target.value;
+
+		if (sortByOption === 'alphabetical') {
+			let sortedGames = [...gameData];
+			sortedGames.sort(compare);
+			dispatch(sort(sortedGames));
+		}
 	};
-	useEffect(() => {
-		dispatch(fetchGames(sortBy));
-	}, [sortBy, dispatch]);
+	// useEffect(() => {
+	// 	dispatch(fetchGames(sortBy));
+	// }, [sortBy, dispatch]);
 
 	return (
 		<nav>
