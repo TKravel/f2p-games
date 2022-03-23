@@ -8,3 +8,5 @@ Tech used
 -   Redux
 -   Sass
 -   [Free-to-Play API](https://rapidapi.com/digiwalls/api/free-to-play-games-database/)
+
+[LIVE DEMO](https://eclectic-hummingbird-ff6216.netlify.app/)
