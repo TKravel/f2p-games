@@ -1,5 +1,7 @@
 // contains variables, resets, mixins, and other similar styles
 
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 // variables
 
 $dark: #051367;
@@ -85,7 +87,9 @@ main {
 }
 
 body {
-	line-height: 1;
+	color: $dark;
+	line-height: 1.1;
+	font-family: 'Merriweather', serif;
 }
 
 ol,

@@ -9,20 +9,19 @@ export const Nav = () => {
 
 	const compare = (a, b) => {
 		if (sortBy === 'alphabetical') {
-			const gameA = a.title.toLowerCase();
-			const gameB = b.title.toLowerCase();
-			if (gameA < gameB) {
+			const titleA = a.title.toLowerCase();
+			const titleB = b.title.toLowerCase();
+			if (titleA < titleB) {
 				return -1;
 			}
-			if (gameA > gameB) {
+			if (titleA > titleB) {
 				return 1;
 			}
 			return 0;
 		} else if (sortBy === 'release-date') {
-			return (
-				parseInt(a.release_date.replace('-', '')) -
-				parseInt(b.release_date.replace('-', ''))
-			);
+			const dateA = parseInt(a.release_date.replace('-', ''));
+			const dateB = parseInt(b.release_date.replace('-', ''));
+			return dateA - dateB;
 		}
 	};
 

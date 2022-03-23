@@ -1,12 +1,25 @@
 // styles for every component necessary for that project, including buttons, modals, etc.
 
+.app-wrapper {
+	position: relative;
+	width: 100vw;
+}
+
+.styled-button {
+	background-color: inherit;
+	border: 1px solid $blue-dark;
+	border-radius: 4px;
+	color: $blue-dark;
+	cursor: pointer;
+	font-weight: 700;
+}
 nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	background-color: $dark;
 	color: $light;
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 2rem;
 	& span {
 		color: $blue-light;
 		font-size: 2rem;
@@ -18,10 +31,20 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 1rem 0;
 	& h1 {
 		font-size: 2rem;
 		text-align: center;
 		width: 100%;
+	}
+}
+
+.page-controls {
+	text-align: right;
+	margin: 1rem 2rem 0 0;
+	width: 100%;
+	& span {
+		margin: 0 1rem;
 	}
 }
 
@@ -47,9 +70,98 @@ main {
 	& p {
 		font-size: 1.1rem;
 	}
+	& .bottom-game-card {
+		display: flex;
+		justify-content: space-between;
+	}
 }
 
-.bottom-game-card {
+.modal {
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	// justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	min-height: 100vh;
+	width: 100%;
+	padding: 1rem 0 2rem 0;
+	text-align: center;
+	& .close-button {
+		align-self: flex-end;
+		margin-right: 2rem;
+		width: 4rem;
+	}
+	& .description-wrapper {
+		border: 3px solid $blue-light;
+		border-radius: 10px;
+		padding: 2rem 1rem;
+		margin: 2rem 0;
+		width: 70%;
+		& h2 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+		& .description {
+			margin: 2rem 0;
+		}
+	}
+
+	& .expand-button {
+		font-size: 1.2rem;
+		margin: 1rem auto;
+		padding: 0.5rem 1rem;
+	}
+	& .screenshot-wrapper {
+		background-color: $dark;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 1rem auto;
+		padding: 2rem 0;
+		width: 100%;
+	}
+	& img {
+		height: auto;
+		min-width: 300px;
+		width: 30%;
+		margin: 1rem;
+	}
+	& .specs-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+		padding: 1rem;
+		width: 100%;
+	}
+	& .specs-container {
+		text-align: center;
+		min-width: 300px;
+		padding: 1rem;
+		width: 50%;
+		& h4 {
+			font-size: 1.5rem;
+			font-weight: 700;
+			margin-bottom: 1rem;
+		}
+		& .li-key {
+			font-weight: 700;
+		}
+	}
+
+	& a {
+		background-color: $blue-dark;
+		border: 1px solid $dark;
+		border-radius: 5px;
+		color: $light;
+		display: block;
+		font-size: 2rem;
+		padding: 1rem 2rem;
+		margin: 1rem auto;
+		width: 20rem;
+	}
 }
