@@ -213,6 +213,15 @@ main h1 {
           justify-content: space-between;
 }
 
+.game-card .bottom-game-card .learn-more {
+  color: #2d31fa;
+  cursor: pointer;
+}
+
+.game-card .bottom-game-card .learn-more:hover {
+  color: #2225bd;
+}
+
 .modal {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -255,6 +264,7 @@ main h1 {
 }
 
 .modal .description-wrapper .description {
+  line-height: 1.3;
   margin: 2rem 0;
 }
 
@@ -323,6 +333,10 @@ main h1 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+}
+
+.modal .specs-container ul {
+  line-height: 1.5;
 }
 
 .modal .specs-container .li-key {

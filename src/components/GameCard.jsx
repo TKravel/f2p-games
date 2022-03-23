@@ -5,8 +5,13 @@ export const GameCard = ({ gameId, gameData, controlModal }) => {
 			<img src={gameData.thumbnail} samesite='Lax'></img>
 			<p className='bottom-game-card'>
 				<span>{gameData.genre}</span>
-				<span id={gameId} onClick={(e) => controlModal(e)}>
-					Expand
+				<span
+					id={gameId}
+					onClick={(e) => controlModal(e)}
+					className='learn-more'
+					aria-labelledby='button'
+				>
+					Learn more
 				</span>
 			</p>
 		</div>

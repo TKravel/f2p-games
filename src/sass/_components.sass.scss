@@ -73,6 +73,13 @@ main {
 	& .bottom-game-card {
 		display: flex;
 		justify-content: space-between;
+		& .learn-more {
+			color: $blue-dark;
+			cursor: pointer;
+		}
+		& .learn-more:hover {
+			color: #2225bd;
+		}
 	}
 }
 
@@ -94,7 +101,6 @@ main {
 		width: 4rem;
 	}
 	& .description-wrapper {
-		// border: 3px solid $dark;
 		border-radius: 10px;
 		box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
 		padding: 2rem;
@@ -105,6 +111,7 @@ main {
 			margin-bottom: 1rem;
 		}
 		& .description {
+			line-height: 1.3;
 			margin: 2rem 0;
 		}
 		& .expand-button {
@@ -154,6 +161,9 @@ main {
 			font-size: 1.5rem;
 			font-weight: 700;
 			margin-bottom: 1rem;
+		}
+		& ul {
+			line-height: 1.5;
 		}
 		& .li-key {
 			font-weight: 700;
