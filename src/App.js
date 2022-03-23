@@ -74,7 +74,26 @@ function App() {
 				<>
 					<Nav />
 					<main className='App'>
-						<h1>Free to play games</h1>
+						<div className='landing-info'>
+							<h1>Welcome to Free to play games!</h1>
+							<p>
+								Your personal database for free to play PC and
+								web browser games. With {games.length} free
+								games, we're sure you'll find something you'll
+								love!
+							</p>
+							<p>
+								<span className='alert'>
+									Legal disclaimer:{' '}
+								</span>
+								Any games, links, or information found within
+								this site are strictly{' '}
+								<em>use at your own risk.</em> We do not
+								guarantee the safety of the game or game
+								information provide. Play at your own risk and
+								as always, <em>please play responsibly!</em>
+							</p>
+						</div>
 						<PageControls
 							changePage={handlePage}
 							currentPage={page}
