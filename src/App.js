@@ -70,33 +70,38 @@ function App() {
 
 	return (
 		<div className='app-wrapper'>
-			<Nav />
 			{!isModalOpen && (
-				<main className='App'>
-					<h1>Free to play games</h1>
-					<PageControls
-						changePage={handlePage}
-						currentPage={page}
-						totalPages={maxPage}
-					/>
-					{games.map((game, index) => {
-						if (index >= page * 10 - 10 && index <= page * 10 - 1) {
-							return (
-								<GameCard
-									key={game.id}
-									gameId={game.id}
-									gameData={game}
-									controlModal={handleModal}
-								/>
-							);
-						}
-					})}
-					<PageControls
-						changePage={handlePage}
-						currentPage={page}
-						totalPages={maxPage}
-					/>
-				</main>
+				<>
+					<Nav />
+					<main className='App'>
+						<h1>Free to play games</h1>
+						<PageControls
+							changePage={handlePage}
+							currentPage={page}
+							totalPages={maxPage}
+						/>
+						{games.map((game, index) => {
+							if (
+								index >= page * 10 - 10 &&
+								index <= page * 10 - 1
+							) {
+								return (
+									<GameCard
+										key={game.id}
+										gameId={game.id}
+										gameData={game}
+										controlModal={handleModal}
+									/>
+								);
+							}
+						})}
+						<PageControls
+							changePage={handlePage}
+							currentPage={page}
+							totalPages={maxPage}
+						/>
+					</main>
+				</>
 			)}
 			{isModalOpen && <Modal data={modalData} closeModal={handleModal} />}
 		</div>
