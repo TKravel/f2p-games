@@ -9,6 +9,16 @@ $blue-dark: #2d31fa;
 $blue-light: #5d8bf4;
 $light: #dff6ff;
 
+// mixins
+
+@mixin flexContainer($direction, $justifyContent) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: wrap;
+	justify-content: $justifyContent;
+	align-items: center;
+}
+
 // css reset
 *,
 *:before,
