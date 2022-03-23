@@ -90,7 +90,7 @@ function App() {
 								this site are strictly{' '}
 								<em>use at your own risk.</em> We do not
 								guarantee the safety of the game or game
-								information provide. Play at your own risk and
+								information provided. Play at your own risk and
 								as always, <em>please play responsibly!</em>
 							</p>
 						</div>
