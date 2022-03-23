@@ -1,7 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export const Modal = ({ data, closeModal }) => {
 	const [isFullDescription, setIsFullDescription] = useState(false);
+
+	useEffect(() => {
+		window.scroll({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	}, []);
 	return (
 		<div className='modal'>
 			<button className='styled-button close-button' onClick={closeModal}>
