@@ -3,12 +3,16 @@ import { useEffect, useState } from 'react';
 export const Modal = ({ data, closeModal }) => {
 	const [isFullDescription, setIsFullDescription] = useState(false);
 
-	useEffect(() => {
+	const scrollToTop = (behavior) => {
 		window.scroll({
 			top: 0,
 			left: 0,
-			behavior: 'smooth',
+			behavior: behavior,
 		});
+	};
+
+	useEffect(() => {
+		scrollToTop('smooth');
 	}, []);
 	return (
 		<div className='modal'>
@@ -25,6 +29,9 @@ export const Modal = ({ data, closeModal }) => {
 				<button
 					onClick={() => {
 						setIsFullDescription(!isFullDescription);
+						if (isFullDescription) {
+							scrollToTop('auto');
+						}
 					}}
 					className='styled-button expand-button'
 				>

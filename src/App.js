@@ -24,18 +24,21 @@ function App() {
 
 	const handlePage = (e) => {
 		let button = e.target.id;
+		const anchor = document.getElementById('page-scroll-anchor');
 
 		if (button === 'prev') {
 			if (page === 1) {
 				return;
 			} else {
 				setPage(page - 1);
+				anchor.scrollIntoView({ behavior: 'smooth' });
 			}
 		} else if (button === 'next') {
 			if (page === maxPage) {
 				return;
 			} else {
 				setPage(page + 1);
+				anchor.scrollIntoView({ behavior: 'smooth' });
 			}
 		}
 	};
@@ -94,6 +97,7 @@ function App() {
 								as always, <em>please play responsibly!</em>
 							</p>
 						</div>
+						<span id='page-scroll-anchor'></span>
 						<PageControls
 							changePage={handlePage}
 							currentPage={page}
