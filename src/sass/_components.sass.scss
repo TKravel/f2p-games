@@ -138,6 +138,11 @@ main {
 			color: #04115e;
 		}
 	}
+	@media screen and (max-width: 500px) {
+		.description-wrapper h2 {
+			font-size: 1.5rem;
+		}
+	}
 
 	& .screenshot-wrapper {
 		@include flexContainer($direction: row, $justifyContent: center);

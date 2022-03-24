@@ -329,6 +329,12 @@ main {
   color: #04115e;
 }
 
+@media screen and (max-width: 500px) {
+  .modal .description-wrapper h2 {
+    font-size: 1.5rem;
+  }
+}
+
 .modal .screenshot-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
