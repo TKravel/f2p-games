@@ -19,6 +19,24 @@ $light: #dff6ff;
 	align-items: center;
 }
 
+@mixin responsive-mobile {
+	@media screen and (max-width: 499px){
+		@content;
+	}
+}
+
+@mixin responsive-med {
+	@media screen and (min-width: 500px) and (max-width: 849px){
+		@content;
+	}
+}
+
+@mixin responsive-lrg {
+	@media screen and (min-width: 850px){
+		@content;
+	}
+}
+
 // css reset
 *,
 *:before,

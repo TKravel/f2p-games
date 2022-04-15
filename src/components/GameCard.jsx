@@ -1,4 +1,4 @@
-export const GameCard = ({ gameId, gameData, controlModal }) => {
+export const GameCard = ({ gameId, gameData, toggleModal }) => {
 	return (
 		<div className='game-card'>
 			<h2>{gameData.title}</h2>
@@ -7,7 +7,7 @@ export const GameCard = ({ gameId, gameData, controlModal }) => {
 				<span>{gameData.genre}</span>
 				<span
 					id={gameId}
-					onClick={(e) => controlModal(e)}
+					onClick={(e) => toggleModal(e)}
 					className='learn-more'
 					aria-labelledby='button'
 				>
