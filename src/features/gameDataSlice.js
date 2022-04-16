@@ -18,6 +18,17 @@ export const fetchGames = createAsyncThunk('games/fetchGames', async () => {
 			},
 		}
 	).then((response) => response.json());
+	// fix API genre data
+	res.forEach((game) => {
+		game.genre = game.genre.toUpperCase();
+		if (game.genre === ' MMORPG') {
+			game.genre = 'MMORPG';
+		} else if (game.genre === 'CARD GAME') {
+			game.genre = 'CARD';
+		} else if (game.genre === 'ARPG') {
+			game.genre = 'ACTION RPG';
+		}
+	});
 	return res;
 });
 

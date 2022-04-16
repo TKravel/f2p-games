@@ -29,6 +29,17 @@ export const GameContainer = ({ toggleModal }) => {
 		}
 	};
 
+	const genres = [];
+	console.log(games);
+	games.forEach((game) => {
+		if (genres.includes(game.genre.toUpperCase())) {
+			return;
+		} else {
+			genres.push(game.genre.toUpperCase());
+		}
+	});
+	console.log(genres);
+
 	return (
 		<section className='game-container'>
 			<span id='page-scroll-anchor'></span>
