@@ -41,6 +41,115 @@
 
 // pagination controls
 
+.options-item-conatiner{
+	@include flexContainer($direction: row, $justifyContent: row);
+	position: relative;
+}
+
+.filter-icon {
+	fill: $blue-med;
+	transition: all 300ms;
+}
+.filter-icon:hover {
+	fill: $blue-light;
+}
+
+.sort-icon {
+	fill: $blue-med;
+	height: 32px;
+	width: 32px;
+	transition: all 300ms;
+}
+
+.sort-icon:hover {
+	fill: $blue-light;
+}
+
+.filter-tooltip {
+	position: absolute;
+	top: calc(-1.8rem - 3px);
+	left: 0;
+	background-color: $background-med;
+	border-radius: 3px;
+	color: $white-dark;
+	font-size: 1rem;
+	padding: .3rem .5rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 500ms;
+}
+.sort-tooltip {
+	position: absolute;
+	top: -1.8rem;
+	left: 0;
+	background-color: $background-med;
+	border-radius: 3px;
+	color: $white-dark;
+	font-size: 1rem;
+	padding: .3rem .5rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 500ms;
+}
+
+.tooltip-active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.genre-select{
+	position: relative;
+	border-bottom: 2px solid $blue-med;
+	color: $blue-med;
+	font-size: 0;
+	opacity: 0;
+	width: 0;
+	visibility: hidden;
+	transition: all 500ms;
+}
+
+.select-active {
+	font-size: inherit;
+	width: 150px;
+	visibility: visible;
+	opacity: 1;
+}
+
+.select-menu {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	background-color: $background-dark;
+	border: 1px solid $blue-med;
+	font-size: 0;
+	height: 0;
+	width: 0;
+
+	opacity: 0;
+	transition: all 500ms;
+	& li {
+		@include flexContainer($direction: row, $justifyContent: flex-start);
+		padding: .2rem .5rem;
+		border-left: 3px solid transparent;
+		
+	}
+	& li:hover {
+		background-color: $background-light;
+		border-left: 3px solid $white-dark;
+		color: $blue-light;
+		cursor: pointer;
+	}
+
+}
+.menu-active {
+	opacity: 1;
+	font-size: inherit;
+	height: auto;
+	width: 150px;
+}
+
+
+
 .page-controls {
 	@include flexContainer($direction: row, $justifyContent: center);
 	// text-align: right;

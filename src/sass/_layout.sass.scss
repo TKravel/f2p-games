@@ -25,6 +25,15 @@ main {
 	padding: 5rem 0 2rem 0;
 }
 
+.options-panel {
+    @include flexContainer($direction: row, $justifyContent: flex-start);
+
+    width: 100%;
+    & .icon-button {
+        @include iconButton();
+    }
+}
+
 .game-container {
     @include flexContainer($direction: row, $justifyContent: space-between);
     

@@ -23,6 +23,14 @@ $white-light: #ffffff;
 
 // mixins
 
+@mixin iconButton(){
+	@include flexContainer($direction: row, $justifyContent: center );
+
+	position: relative;
+	background-color: inherit;
+	border: none;
+}
+
 @mixin flexContainer($direction, $justifyContent) {
 	display: flex;
 	flex-direction: $direction;

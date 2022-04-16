@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { PageControls } from './PageControls';
 import { GameCard } from './GameCard';
+import { OptionsPanel } from './OptionsPanel';
 
 export const GameContainer = ({ toggleModal }) => {
 	const games = useSelector((state) => state.game.games);
@@ -43,6 +44,7 @@ export const GameContainer = ({ toggleModal }) => {
 	return (
 		<section className='game-container'>
 			<span id='page-scroll-anchor'></span>
+			<OptionsPanel />
 			<PageControls
 				changePage={handlePage}
 				currentPage={page}
