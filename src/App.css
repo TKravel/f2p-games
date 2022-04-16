@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 *,
 *:before,
 *:after {
@@ -80,9 +80,9 @@ main {
 }
 
 body {
-  color: #051367;
+  color: #EEEEEE;
   line-height: 1.1;
-  font-family: 'Merriweather', serif;
+  font-family: 'Lato', sans-serif;
 }
 
 ol,
@@ -113,38 +113,6 @@ input {
   border-radius: 0;
 }
 
-.game-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 2rem;
-}
-
-.app-wrapper {
-  width: 100%;
-}
-
-.styled-button {
-  background-color: inherit;
-  border: 1px solid #2d31fa;
-  border-radius: 4px;
-  color: #2d31fa;
-  cursor: pointer;
-  font-weight: 700;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,13 +129,19 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #051367;
-  color: #dff6ff;
+  background-color: #222831;
+  color: #EEEEEE;
   padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3rem;
+  width: 100%;
+  z-index: 50;
 }
 
 nav span {
-  color: #5d8bf4;
+  color: #00cad4;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -188,7 +162,44 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem 0;
+  background-color: #222831;
+  padding: 5rem 0 2rem 0;
+}
+
+.game-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+.game-container #page-scroll-anchor {
+  scroll-margin-top: 5rem;
+}
+
+.app-wrapper {
+  width: 100%;
+}
+
+.styled-button {
+  background-color: inherit;
+  border: 1px solid #018b92;
+  border-radius: 4px;
+  color: #018b92;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .landing-info {
@@ -223,42 +234,87 @@ main {
 }
 
 .page-controls {
-  text-align: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1rem 0;
   width: 100%;
 }
 
 .page-controls span {
-  margin: 0 1rem;
+  margin: 0 1rem 4px 1rem;
+}
+
+.pagination-button {
+  background-color: inherit;
+  border: none;
+  padding: 0;
+}
+
+.prev-button-icon {
+  fill: #00ADB5;
+  height: 16px;
+  width: 16px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.next-button-icon {
+  fill: #00ADB5;
+  height: 16px;
+  width: 16px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.prev-button-icon:hover, .next-button-icon:hover {
+  fill: #00cad4;
 }
 
 .game-card {
-  color: #051367;
+  color: #EEEEEE;
+  background-color: #393E46;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
           box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
-  max-width: 22%;
+  width: 24%;
   margin: 1rem 0;
   padding: 1rem;
   overflow: hidden;
 }
 
 .game-card h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: .5rem 0 .2rem 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .game-card img {
-  border-radius: 5px;
+  border-radius: 3px;
   height: auto;
   width: 100%;
 }
 
-.game-card p {
-  font-size: 1.1rem;
+.game-card .img-placeholder {
+  background-color: #525964;
+  border-radius: 3px;
+  height: 50%;
+  width: 100%;
 }
 
 .game-card .bottom-game-card {
@@ -277,15 +333,35 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  align-items: center;
 }
 
-.game-card .bottom-game-card .learn-more {
-  color: #2d31fa;
+.game-card .bottom-game-card span {
+  color: #a1a1a1;
+  font-size: .9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.game-card .bottom-game-card .learn-more-button {
+  background-color: #393E46;
+  border: none;
+  border-radius: 100px;
+  color: #00ADB5;
   cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
 }
 
-.game-card .bottom-game-card .learn-more:hover {
-  color: #2225bd;
+.game-card .bottom-game-card .learn-more-button:hover {
+  color: #00cad4;
+  letter-spacing: .5px;
 }
 
 @media screen and (max-width: 499px) {
@@ -298,6 +374,11 @@ main {
   .game-card {
     max-width: 31%;
   }
+}
+
+.game-card:hover {
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(28, 103, 5, 0.15);
+          box-shadow: 0px 5px 10px 2px rgba(28, 103, 5, 0.15);
 }
 
 .modal {
@@ -386,7 +467,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #051367;
+  background-color: #222831;
   margin: 1rem 0;
   padding: 2rem 0;
   width: 100%;
@@ -446,12 +527,12 @@ main {
 }
 
 .modal a {
-  background-color: #2d31fa;
-  border: 1px solid #051367;
+  background-color: #018b92;
+  border: 1px solid #222831;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.1);
           box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.1);
-  color: #dff6ff;
+  color: #EEEEEE;
   display: block;
   font-size: 2rem;
   padding: 1rem 2rem;

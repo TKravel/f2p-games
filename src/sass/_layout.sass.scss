@@ -1,7 +1,35 @@
 // there are the styles for the header, footer, the grid system, etc
+nav {
+	@include flexContainer($direction: row, $justifyContent: space-between);
+
+	background-color: $background-dark;
+	color: $white-med;
+	padding: 0.5rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    z-index: 50;
+	& span {
+		color: $blue-light;
+		font-size: 2rem;
+		font-weight: 700;
+	}
+}
+
+main {
+	@include flexContainer($direction: row, $justifyContent: center);
+
+    background-color: $background-dark;
+	padding: 5rem 0 2rem 0;
+}
+
 .game-container {
     @include flexContainer($direction: row, $justifyContent: space-between);
     
-
     padding: 2rem;
+    & #page-scroll-anchor {
+        scroll-margin-top: 5rem;
+    }
 }

@@ -12,24 +12,6 @@
 	cursor: pointer;
 	font-weight: 700;
 }
-nav {
-	@include flexContainer($direction: row, $justifyContent: space-between);
-
-	background-color: $dark;
-	color: $light;
-	padding: 0.5rem 2rem;
-	& span {
-		color: $blue-light;
-		font-size: 2rem;
-		font-weight: 700;
-	}
-}
-
-main {
-	@include flexContainer($direction: row, $justifyContent: center);
-
-	padding: 1rem 0;
-}
 
 .landing-info {
 	width: 70%;
@@ -60,48 +42,100 @@ main {
 // pagination controls
 
 .page-controls {
-	text-align: right;
+	@include flexContainer($direction: row, $justifyContent: center);
+	// text-align: right;
 	margin: 1rem 0;
 	width: 100%;
 	& span {
-		margin: 0 1rem;
+		margin: 0 1rem 4px 1rem;
 	}
+}
+
+.pagination-button {
+	background-color: inherit;
+	border: none;
+	padding: 0;
+}
+// .pagination-button:hover {
+// 	background-color: $blue-med;
+// }
+
+.prev-button-icon {
+	fill: $blue-med;
+	height: 16px;
+	width: 16px;
+	transform: rotate(-90deg);
+}
+
+.next-button-icon {
+	fill: $blue-med;
+	height: 16px;
+	width: 16px;
+	transform: rotate(90deg);
+}
+
+.prev-button-icon:hover, .next-button-icon:hover {
+	fill: $blue-light;
 }
 
 // game cards
 
 .game-card {
-	color: $dark;
+	color: $white-med;
+	background-color: $background-med;
 	border-radius: 5px;
 	box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
-	max-width: 22%;
+	width: 24%;
 	margin: 1rem 0;
 	padding: 1rem;
 	overflow: hidden;
 	& h2 {
-		font-size: 1.5rem;
-		font-weight: 600;
-		white-space: nowrap;
+		font-size: 1.1rem;
+		font-weight: 700;
+		margin: .5rem 0 .2rem 0;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 	& img {
-		border-radius: 5px;
+		border-radius: 3px;
 		height: auto;
 		width: 100%;
 	}
-	& p {
-		font-size: 1.1rem;
+	& .img-placeholder {
+		background-color: $background-light;
+		border-radius: 3px;
+		height: 50%;
+		width: 100%;
 	}
+	
 	& .bottom-game-card {
 		@include flexContainer($direction: row, $justifyContent: space-between);
+		align-items: center;
 
-		& .learn-more {
-			color: $blue-dark;
-			cursor: pointer;
+		& span {
+			color: $white-dark;
+			font-size: .9rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: -1px;
 		}
-		& .learn-more:hover {
-			color: #2225bd;
+		& .learn-more-button {
+			background-color: $background-med;
+			border: none;
+			border-radius: 100px;
+			color: $blue-med;
+			cursor: pointer;
+			font-family: inherit;
+			font-size: 1rem;
+			font-weight: 700;
+			letter-spacing: normal;
+			text-transform: uppercase;
+			transition: all 500ms;
+		}
+		& .learn-more-button:hover {
+			color: $blue-light;
+			letter-spacing: .5px;
 		}
 	}
 	@include responsive-mobile {
@@ -110,6 +144,10 @@ main {
 	@include responsive-med {
 		max-width: 31%;
 	}
+}
+
+.game-card:hover {
+	box-shadow: 0px 5px 10px 2px rgba(28, 103, 5, 0.15);
 }
 
 .modal {
@@ -160,7 +198,7 @@ main {
 	& .screenshot-wrapper {
 		@include flexContainer($direction: row, $justifyContent: center);
 
-		background-color: $dark;
+		background-color: $background-dark;
 		margin: 1rem 0;
 		padding: 2rem 0;
 		width: 100%;
@@ -202,10 +240,10 @@ main {
 
 	a {
 		background-color: $blue-dark;
-		border: 1px solid $dark;
+		border: 1px solid $background-dark;
 		border-radius: 5px;
 		box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.1);
-		color: $light;
+		color: $white-med;
 		display: block;
 		font-size: 2rem;
 		padding: 1rem 2rem;

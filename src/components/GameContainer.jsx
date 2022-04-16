@@ -9,7 +9,7 @@ export const GameContainer = ({ toggleModal }) => {
 	const totalPageCount = Math.ceil(games.length / 12);
 
 	const handlePage = (e) => {
-		let button = e.target.id;
+		let button = e.currentTarget.id;
 		const anchor = document.getElementById('page-scroll-anchor');
 
 		if (button === 'prev') {
