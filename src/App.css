@@ -508,7 +508,7 @@ main {
 .game-card .img-placeholder {
   background-color: #525964;
   border-radius: 3px;
-  height: 50%;
+  height: calc(13vw - 2rem);
   width: 100%;
 }
 
@@ -561,13 +561,13 @@ main {
 
 @media screen and (max-width: 499px) {
   .game-card {
-    max-width: 90%;
+    width: 90%;
   }
 }
 
 @media screen and (min-width: 500px) and (max-width: 849px) {
   .game-card {
-    max-width: 31%;
+    width: 31%;
   }
 }
 

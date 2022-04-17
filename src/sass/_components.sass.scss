@@ -223,7 +223,7 @@ margin-left: auto;
 	& .img-placeholder {
 		background-color: $background-light;
 		border-radius: 3px;
-		height: 50%;
+		height: calc(13vw - 2rem);
 		width: 100%;
 	}
 	
@@ -257,10 +257,10 @@ margin-left: auto;
 		}
 	}
 	@include responsive-mobile {
-		max-width: 90%;
+		width: 90%;
 	}
 	@include responsive-med {
-		max-width: 31%;
+		width: 31%;
 	}
 }
 

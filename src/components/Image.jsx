@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 export const Image = ({ data, styles }) => {
 	const [isLoading, setIsLoading] = useState(true);
-	const [img, setImg] = useState(null);
 
 	const handleImage = () => {
 		setIsLoading(false);
@@ -11,15 +10,20 @@ export const Image = ({ data, styles }) => {
 		<>
 			<div
 				className='img-placeholder'
-				style={isLoading ? { visibility: '1' } : { visibility: '0' }}
+				style={isLoading ? { display: 'block' } : { display: 'none' }}
 			></div>
 
 			<img
-				style={isLoading ? { visibility: '0' } : { visibility: '1' }}
+				style={
+					isLoading
+						? { visibility: 'hidden' }
+						: { visibility: 'visible' }
+				}
 				className={styles}
 				src={data.thumbnail}
 				alt={`${data.title} cover image`}
 				onLoad={handleImage}
+				sameSite='Strict'
 			></img>
 		</>
 	);
