@@ -1,8 +1,13 @@
 import { TriangleArrow } from '../svgs/TriangleArrow';
 
-export const PageControls = ({ changePage, currentPage, totalPages }) => {
+export const PaginationControls = ({
+	id,
+	changePage,
+	currentPage,
+	totalPages,
+}) => {
 	return (
-		<div className='page-controls'>
+		<div id={id} className='page-controls'>
 			<button
 				id='prev'
 				className='pagination-button'

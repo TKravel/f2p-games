@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { SelectInput } from './SelectInput';
 
-export const FilterControls = () => {
+export const GenreControls = ({ setFilters }) => {
 	const games = useSelector((state) => state.game.games);
 	const [genreSelection, setGenreSelection] = useState('ALL');
 	const [genreList, setGenreList] = useState([]);
@@ -39,29 +39,31 @@ export const FilterControls = () => {
 			MENU.classList.remove('menu-active');
 			setTimeout(() => {
 				INPUT.classList.remove('select-active');
-			}, 600);
+			}, 300);
 		} else {
 			INPUT.classList.add('select-active');
 			setTimeout(() => {
 				MENU.classList.add('menu-active');
-			}, 600);
+			}, 300);
 		}
 	};
-	const handleBlur = () => {
-		const INPUT = document.getElementById('genre-select');
-		const MENU = document.getElementById('genre-select-menu');
-		MENU.classList.remove('menu-active');
-		setTimeout(() => {
-			INPUT.classList.remove('select-active');
-		}, 600);
-	};
+	// const handleBlur = () => {
+	// 	console.log('blur');
+	// 	const INPUT = document.getElementById('genre-select');
+	// 	const MENU = document.getElementById('genre-select-menu');
+	// 	MENU.classList.remove('menu-active');
+	// 	setTimeout(() => {
+	// 		INPUT.classList.remove('select-active');
+	// 	}, 300);
+	// };
 
 	const handleSelection = (selection) => {
 		setGenreSelection(selection);
+		setFilters('genre', selection);
 	};
 
 	return (
-		<div className='options-item-conatiner' onBlur={handleBlur}>
+		<div className='options-item-conatiner'>
 			<p className='filter-tooltip'>Filter</p>
 			<button
 				className='icon-button'

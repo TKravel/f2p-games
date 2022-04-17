@@ -7,20 +7,14 @@ export const SelectInput = ({ inputID, state, dropdownList, handleState }) => {
 			MENU.classList.remove('menu-active');
 			setTimeout(() => {
 				INPUT.classList.remove('select-active');
-			}, 600);
+			}, 300);
 		} else {
 			INPUT.classList.add('select-active');
 			setTimeout(() => {
 				MENU.classList.add('menu-active');
-			}, 600);
+			}, 300);
 		}
 	};
-	// const controlBlur = () => {
-	// 	MENU.classList.remove('menu-active');
-	// 	setTimeout(() => {
-	// 		INPUT.classList.remove('select-active');
-	// 	}, 600);
-	// };
 
 	const handleSelection = (e) => {
 		handleState(e.target.dataset.value);
@@ -28,7 +22,7 @@ export const SelectInput = ({ inputID, state, dropdownList, handleState }) => {
 	};
 
 	return (
-		<div id={inputID} className='genre-select'>
+		<div id={inputID} className='select-input'>
 			<span>{state}</span>
 			<ul id={`${inputID}-menu`} className='select-menu'>
 				{dropdownList.map((value) => {

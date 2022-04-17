@@ -2,7 +2,7 @@ import { SortIcon } from '../svgs/SortIcon';
 import { useState } from 'react';
 import { SelectInput } from './SelectInput';
 
-export const SortControls = () => {
+export const SortControls = ({ setFilters }) => {
 	const [sortSelection, setSortSelection] = useState('ALPHABETICAL');
 	const sortList = ['ALPHABETICAL', 'RELEASE DATE'];
 
@@ -22,29 +22,30 @@ export const SortControls = () => {
 			MENU.classList.remove('menu-active');
 			setTimeout(() => {
 				INPUT.classList.remove('select-active');
-			}, 600);
+			}, 300);
 		} else {
 			INPUT.classList.add('select-active');
 			setTimeout(() => {
 				MENU.classList.add('menu-active');
-			}, 600);
+			}, 300);
 		}
 	};
-	const handleBlur = () => {
-		const INPUT = document.getElementById('sort-select');
-		const MENU = document.getElementById('sort-select-menu');
-		MENU.classList.remove('menu-active');
-		setTimeout(() => {
-			INPUT.classList.remove('select-active');
-		}, 600);
-	};
+	// const handleBlur = () => {
+	// 	const INPUT = document.getElementById('sort-select');
+	// 	const MENU = document.getElementById('sort-select-menu');
+	// 	MENU.classList.remove('menu-active');
+	// 	setTimeout(() => {
+	// 		INPUT.classList.remove('select-active');
+	// 	}, 300);
+	// };
 
 	const handleSelection = (selection) => {
 		setSortSelection(selection);
+		setFilters('sort', selection);
 	};
 
 	return (
-		<div className='options-item-conatiner' onBlur={handleBlur}>
+		<div className='options-item-conatiner'>
 			<p className='sort-tooltip'>Sort</p>
 			<button
 				className='icon-button'

@@ -349,7 +349,7 @@ main {
   opacity: 1;
 }
 
-.genre-select {
+.select-input {
   position: relative;
   border-bottom: 2px solid #00ADB5;
   color: #00ADB5;
@@ -357,8 +357,8 @@ main {
   opacity: 0;
   width: 0;
   visibility: hidden;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
 
 .select-active {
@@ -378,8 +378,8 @@ main {
   height: 0;
   width: 0;
   opacity: 0;
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
 }
 
 .select-menu li {
@@ -433,11 +433,23 @@ main {
       -ms-flex-align: center;
           align-items: center;
   margin: 1rem 0;
-  width: 100%;
 }
 
 .page-controls span {
+  color: #00ADB5;
+  font-weight: 700;
   margin: 0 1rem 4px 1rem;
+}
+
+#top-pagination-controls {
+  margin-left: auto;
+}
+
+#bottom-pagination-controls {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
 }
 
 .pagination-button {
