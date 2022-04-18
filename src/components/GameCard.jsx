@@ -4,13 +4,8 @@ export const GameCard = ({ gameId, gameData, toggleModal }) => {
 	return (
 		<div className='game-card'>
 			<Image data={gameData} />
-			{/* <img
-				src={gameData.thumbnail}
-				alt={`${gameData.title} cover image`}
-				samesite='Lax'
-			></img> */}
-			<h2>{gameData.title}</h2>
-			<p className='bottom-game-card'>
+			<div className='bottom-game-card'>
+				<h2>{gameData.title}</h2>
 				<span>{gameData.genre}</span>
 				<button
 					id={gameId}
@@ -19,7 +14,7 @@ export const GameCard = ({ gameId, gameData, toggleModal }) => {
 				>
 					Learn more
 				</button>
-			</p>
+			</div>
 		</div>
 	);
 };

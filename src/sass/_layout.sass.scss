@@ -22,12 +22,13 @@ main {
 	@include flexContainer($direction: row, $justifyContent: center);
 
     background-color: $background-dark;
-	padding: 5rem 0 2rem 0;
+	padding: 5rem 0 0 0;
 }
 
 .options-panel {
     @include flexContainer($direction: row, $justifyContent: flex-start);
 
+    padding: 0 1rem;
     width: 100%;
     & .icon-button {
         @include iconButton();
@@ -35,9 +36,9 @@ main {
 }
 
 .game-container {
-    @include flexContainer($direction: row, $justifyContent: space-between);
+    @include flexContainer($direction: row, $justifyContent: center);
     
-    padding: 2rem;
+    padding: 1rem;
     & #page-scroll-anchor {
         scroll-margin-top: 5rem;
     }
