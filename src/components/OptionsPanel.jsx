@@ -11,8 +11,10 @@ export const OptionsPanel = ({
 }) => {
 	return (
 		<div className='options-panel'>
-			<GenreControls setFilters={setFilters} />
-			<SortControls setFilters={setFilters} />
+			<div className='filter-buttons-container'>
+				<GenreControls setFilters={setFilters} />
+				<SortControls setFilters={setFilters} />
+			</div>
 			<PaginationControls
 				id='top-pagination-controls'
 				changePage={changePage}

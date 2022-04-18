@@ -186,6 +186,30 @@ main {
   width: 100%;
 }
 
+.options-panel .filter-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 575px) {
+  .options-panel .filter-buttons-container {
+    display: none;
+  }
+}
+
 .options-panel .icon-button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -232,6 +256,60 @@ main {
 
 .app-wrapper {
   width: 100%;
+}
+
+.hamburger-menu {
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+
+.hamburger-top {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  fill: #00ADB5;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 250ms 250ms;
+  transition: all 250ms 250ms;
+}
+
+.hamburger-middle {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  fill: #00ADB5;
+  opacity: 1;
+  -webkit-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+.hamburger-bottom {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  fill: #00ADB5;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 250ms 250ms;
+  transition: all 250ms 250ms;
+}
+
+.hamburger-menu-rotate-cw {
+  top: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger-menu-rotate-ccw {
+  top: 0px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.hamburger-menu-fade-bar {
+  opacity: 0;
 }
 
 .styled-button {

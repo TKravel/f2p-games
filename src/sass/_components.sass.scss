@@ -4,6 +4,48 @@
 	width: 100%;
 }
 
+.hamburger-menu {
+	position: relative;
+	height: 24px;
+	width: 24px;
+	
+}
+.hamburger-top {
+	position: absolute;
+	top: -10px;
+	left: 0;
+	fill: $blue-med;
+	transform: rotate(0deg);
+	transition: all 250ms 250ms;
+}
+.hamburger-middle {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	fill: $blue-med;
+	opacity: 1;
+	transition: opacity 400ms;
+}
+.hamburger-bottom {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	fill: $blue-med;
+	transform: rotate(0deg);
+	transition: all 250ms 250ms;
+}
+.hamburger-menu-rotate-cw {
+	top: 0px;
+	transform: rotate(45deg);
+}
+.hamburger-menu-rotate-ccw {
+	top: 0px;
+	transform: rotate(-45deg);
+}
+.hamburger-menu-fade-bar {
+	opacity: 0;
+}
+
 .styled-button {
 	background-color: inherit;
 	border: 1px solid $blue-dark;
