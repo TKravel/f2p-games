@@ -4,6 +4,18 @@ import { useEffect, useState } from 'react';
 import { SelectInput } from './SelectInput';
 import { setFilter } from '../features/filterStateSlice';
 
+const compare = (a, b) => {
+	const genreA = a.toLowerCase();
+	const genreB = b.toLowerCase();
+	if (genreA < genreB) {
+		return -1;
+	}
+	if (genreA > genreB) {
+		return 1;
+	}
+	return 0;
+};
+
 export const GenreControls = () => {
 	const dispatch = useDispatch();
 	const games = useSelector((state) => state.game.games);
@@ -22,6 +34,7 @@ export const GenreControls = () => {
 				genres.push(gameObj.genre);
 			}
 		});
+		genres.sort(compare);
 		setGenreList(genres);
 	}, [games]);
 
