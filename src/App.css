@@ -140,7 +140,7 @@ nav {
   z-index: 50;
 }
 
-nav span {
+nav .main-logo {
   color: #00cad4;
   font-size: 2rem;
   font-weight: 700;
@@ -258,9 +258,38 @@ main {
   width: 100%;
 }
 
+.sidebar-container {
+  position: absolute;
+  top: 0;
+  right: calc(-200px + 2rem);
+  background-color: none;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  color: #00ADB5;
+  display: none;
+  padding: 1rem;
+  text-transform: capitalize;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+}
+
+@media screen and (max-width: 575px) {
+  .sidebar-container {
+    display: block;
+  }
+}
+
+.sidebar-open {
+  background-color: #222831;
+  border-left: 1px solid #393E46;
+  border-bottom: 1px solid #393E46;
+  right: 0;
+}
+
 .hamburger-menu {
   position: relative;
   height: 24px;
+  margin: 0 auto 1rem 0;
   width: 24px;
 }
 
@@ -310,6 +339,52 @@ main {
 
 .hamburger-menu-fade-bar {
   opacity: 0;
+}
+
+.nav-filter-menu {
+  position: relative;
+  top: 0;
+  right: calc(-200px);
+  opacity: 0;
+  visibility: hidden;
+  width: 200px;
+  -webkit-transition: all 600ms;
+  transition: all 600ms;
+}
+
+.nav-active-filter {
+  color: #EEEEEE;
+}
+
+.nav-filter-list .nav-filter-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2rem;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.nav-filter-list .nav-filter-item:hover {
+  background-color: #222831;
+}
+
+.sidebar-active {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .styled-button {

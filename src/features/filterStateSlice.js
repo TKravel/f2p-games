@@ -9,7 +9,7 @@ export const filterStateSlice = createSlice({
 	name: 'filterState',
 	initialState,
 	reducers: {
-		setFilter: (state, action) => {
+		setGenreFilter: (state, action) => {
 			state.genreFilter = action.payload;
 		},
 		setSort: (state, action) => {
@@ -19,6 +19,6 @@ export const filterStateSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setFilter, setSort } = filterStateSlice.actions;
+export const { setGenreFilter, setSort } = filterStateSlice.actions;
 
 export default filterStateSlice.reducer;

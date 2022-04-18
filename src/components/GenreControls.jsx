@@ -2,7 +2,7 @@ import { FilterIcon } from '../svgs/FilterIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { SelectInput } from './SelectInput';
-import { setFilter } from '../features/filterStateSlice';
+import { setGenreFilter } from '../features/filterStateSlice';
 
 const compare = (a, b) => {
 	const genreA = a.toLowerCase();
@@ -64,7 +64,7 @@ export const GenreControls = () => {
 	};
 
 	const handleSelection = (selection) => {
-		dispatch(setFilter(selection));
+		dispatch(setGenreFilter(selection));
 	};
 
 	return (
