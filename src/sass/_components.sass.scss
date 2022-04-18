@@ -208,24 +208,12 @@ margin-left: auto;
 	height: auto;
 	width: calc(25% - 2rem);
 	margin: 1rem;
-	// padding: 1rem;
 	overflow: hidden;
 	& .image-wrapper {
 		background-color: $background-light;
-
-		// height: calc(13vw - 2rem);
-		// height: auto;
 		width: 100%;
 	}
 	& img {
-		// border-radius: 3px;
-		height: auto;
-		width: 100%;
-
-	}
-	& .img-placeholder {
-		background-color: $background-light;
-		border-radius: 3px;
 		height: auto;
 		width: 100%;
 	}

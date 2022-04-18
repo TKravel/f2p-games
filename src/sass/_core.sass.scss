@@ -23,7 +23,7 @@ $white-light: #ffffff;
 
 // mixins
 
-@mixin iconButton(){
+@mixin svgButton(){
 	@include flexContainer($direction: row, $justifyContent: center );
 
 	position: relative;
