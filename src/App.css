@@ -347,6 +347,7 @@ main {
   right: calc(-200px);
   opacity: 0;
   visibility: hidden;
+  height: 0;
   width: 200px;
   -webkit-transition: all 600ms;
   transition: all 600ms;
@@ -384,6 +385,7 @@ main {
 .sidebar-active {
   right: 0;
   opacity: 1;
+  height: auto;
   visibility: visible;
 }
 
