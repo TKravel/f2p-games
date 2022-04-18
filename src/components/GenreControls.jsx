@@ -1,11 +1,13 @@
 import { FilterIcon } from '../svgs/FilterIcon';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { SelectInput } from './SelectInput';
+import { setFilter } from '../features/filterStateSlice';
 
-export const GenreControls = ({ setFilters }) => {
+export const GenreControls = () => {
+	const dispatch = useDispatch();
 	const games = useSelector((state) => state.game.games);
-	const [genreSelection, setGenreSelection] = useState('ALL');
+	const genreState = useSelector((state) => state.filters.genreFilter);
 	const [genreList, setGenreList] = useState([]);
 
 	useEffect(() => {
@@ -47,19 +49,9 @@ export const GenreControls = ({ setFilters }) => {
 			}, 300);
 		}
 	};
-	// const handleBlur = () => {
-	// 	console.log('blur');
-	// 	const INPUT = document.getElementById('genre-select');
-	// 	const MENU = document.getElementById('genre-select-menu');
-	// 	MENU.classList.remove('menu-active');
-	// 	setTimeout(() => {
-	// 		INPUT.classList.remove('select-active');
-	// 	}, 300);
-	// };
 
 	const handleSelection = (selection) => {
-		setGenreSelection(selection);
-		setFilters('genre', selection);
+		dispatch(setFilter(selection));
 	};
 
 	return (
@@ -75,7 +67,7 @@ export const GenreControls = ({ setFilters }) => {
 			</button>
 			<SelectInput
 				inputID='genre-select'
-				state={genreSelection}
+				state={genreState}
 				dropdownList={genreList}
 				handleState={handleSelection}
 			/>

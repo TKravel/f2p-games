@@ -6,16 +6,13 @@ import { PaginationControls } from './PaginationControls';
 
 export const GameContainer = ({ toggleModal }) => {
 	const gameStore = useSelector((state) => state.game.games);
+	const filterStore = useSelector((state) => state.filters);
 	const [games, setGames] = useState([]);
 	const [page, setPage] = useState(1);
-	const [filters, setFilters] = useState({
-		genre: 'ALL',
-		sort: 'ALPHABETICAL',
-	});
 	const totalPageCount = Math.ceil(games.length / 12);
 
 	const compare = (a, b) => {
-		if (filters.sort === 'ALPHABETICAL') {
+		if (filterStore.sort === 'ALPHABETICAL') {
 			const titleA = a.title.toLowerCase();
 			const titleB = b.title.toLowerCase();
 			if (titleA < titleB) {
@@ -25,7 +22,7 @@ export const GameContainer = ({ toggleModal }) => {
 				return 1;
 			}
 			return 0;
-		} else if (filters.sort === 'RELEASE DATE') {
+		} else if (filterStore.sort === 'RELEASE DATE') {
 			const dateA = parseInt(a.release_date.replace('-', ''));
 			const dateB = parseInt(b.release_date.replace('-', ''));
 			return dateA - dateB;
@@ -40,19 +37,17 @@ export const GameContainer = ({ toggleModal }) => {
 
 	useEffect(() => {
 		const sortedGames = [...gameStore];
-		console.log(sortedGames);
 
 		sortedGames.sort(compare);
-		if (filters.genre !== 'ALL') {
+		if (filterStore.genreFilter !== 'ALL') {
 			const filteredGames = sortedGames.filter(
-				(game) => game.genre == filters.genre
+				(game) => game.genre === filterStore.genreFilter
 			);
-			// console.log(filteredGames);
 			setGames(filteredGames);
 		} else {
 			setGames(sortedGames);
 		}
-	}, [filters, gameStore]);
+	}, [filterStore, gameStore]);
 
 	const handlePage = (e) => {
 		let button = e.currentTarget.id;
@@ -75,21 +70,10 @@ export const GameContainer = ({ toggleModal }) => {
 		}
 	};
 
-	const handleFilters = (type, selection) => {
-		console.log(type, selection);
-		setFilters((prevValues) => {
-			return {
-				...prevValues,
-				[type]: selection,
-			};
-		});
-	};
-
 	return (
 		<section className='game-container'>
 			<span id='page-scroll-anchor'></span>
 			<OptionsPanel
-				setFilters={handleFilters}
 				changePage={handlePage}
 				currentPage={page}
 				totalPages={totalPageCount}

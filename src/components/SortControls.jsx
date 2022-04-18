@@ -1,9 +1,12 @@
 import { SortIcon } from '../svgs/SortIcon';
 import { useState } from 'react';
 import { SelectInput } from './SelectInput';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSort } from '../features/filterStateSlice';
 
-export const SortControls = ({ setFilters }) => {
-	const [sortSelection, setSortSelection] = useState('ALPHABETICAL');
+export const SortControls = () => {
+	const dispatch = useDispatch();
+	const sortState = useSelector((state) => state.filters.sort);
 	const sortList = ['ALPHABETICAL', 'RELEASE DATE'];
 
 	const toggleTooltip = () => {
@@ -30,18 +33,9 @@ export const SortControls = ({ setFilters }) => {
 			}, 300);
 		}
 	};
-	// const handleBlur = () => {
-	// 	const INPUT = document.getElementById('sort-select');
-	// 	const MENU = document.getElementById('sort-select-menu');
-	// 	MENU.classList.remove('menu-active');
-	// 	setTimeout(() => {
-	// 		INPUT.classList.remove('select-active');
-	// 	}, 300);
-	// };
 
 	const handleSelection = (selection) => {
-		setSortSelection(selection);
-		setFilters('sort', selection);
+		dispatch(setSort(selection));
 	};
 
 	return (
@@ -57,7 +51,7 @@ export const SortControls = ({ setFilters }) => {
 			</button>
 			<SelectInput
 				inputID='sort-select'
-				state={sortSelection}
+				state={sortState}
 				dropdownList={sortList}
 				handleState={handleSelection}
 			/>
