@@ -389,11 +389,21 @@ main {
 
 .styled-button {
   background-color: inherit;
-  border: 1px solid #018b92;
+  border: 1px solid #00ADB5;
   border-radius: 4px;
-  color: #018b92;
+  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
+          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
+  color: #00ADB5;
   cursor: pointer;
   font-weight: 700;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.styled-button:hover {
+  color: #00cad4;
+  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.3);
+          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.3);
 }
 
 .landing-info {
@@ -753,7 +763,8 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
+  background-color: #222831;
+  color: #EEEEEE;
   min-height: 100vh;
   width: 100%;
   padding: 1rem 0 2rem 0;
@@ -763,22 +774,22 @@ main {
 .modal .close-button {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
-          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
   margin-right: 2rem;
   width: 4rem;
 }
 
 .modal .description-wrapper {
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
-          box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
+  background-color: #393E46;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
+          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
   padding: 2rem;
   margin: 2rem 0;
   width: 70%;
 }
 
 .modal .description-wrapper h2 {
+  color: #00ADB5;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -790,15 +801,9 @@ main {
 }
 
 .modal .description-wrapper .expand-button {
-  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
-          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
   font-size: 1.2rem;
   margin: 1rem auto;
   padding: 0.5rem 1rem;
-}
-
-.modal .description-wrapper .expand-button:hover {
-  color: #04115e;
 }
 
 @media screen and (max-width: 500px) {
@@ -829,6 +834,11 @@ main {
   width: 100%;
 }
 
+.modal .screenshot-wrapper h3 {
+  color: #00ADB5;
+  font-size: 1.7rem;
+}
+
 .modal img {
   height: auto;
   min-width: 300px;
@@ -857,6 +867,7 @@ main {
 }
 
 .modal .specs-container {
+  background-color: #393E46;
   border-radius: 10px;
   -webkit-box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
           box-shadow: 0px 5px 10px 2px rgba(5, 20, 103, 0.15);
@@ -868,6 +879,7 @@ main {
 }
 
 .modal .specs-container h4 {
+  color: #00ADB5;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -878,8 +890,10 @@ main {
 }
 
 .modal .specs-container .li-key {
+  color: #018b92;
   font-style: italic;
   font-weight: 700;
+  margin-right: .4rem;
 }
 
 .modal a {

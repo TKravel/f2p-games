@@ -39,6 +39,7 @@ export const Modal = ({ data, closeModal }) => {
 				</button>
 			</div>
 			<div className='screenshot-wrapper'>
+				<h3>Screenshots</h3>
 				{data.screenshots.map((image) => {
 					return (
 						<img
