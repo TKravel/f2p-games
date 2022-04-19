@@ -40,15 +40,17 @@ export const Modal = ({ data, closeModal }) => {
 			</div>
 			<div className='screenshot-wrapper'>
 				<h3>Screenshots</h3>
-				{data.screenshots.map((image) => {
-					return (
-						<img
-							key={image.id}
-							src={image.image}
-							samesite='Lax'
-						></img>
-					);
-				})}
+				<div className='screenshot-container'>
+					{data.screenshots.map((image) => {
+						return (
+							<img
+								key={image.id}
+								src={image.image}
+								samesite='Lax'
+							></img>
+						);
+					})}
+				</div>
 			</div>
 			<div className='specs-wrapper'>
 				<div className='specs-container'>

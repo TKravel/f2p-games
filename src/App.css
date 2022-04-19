@@ -745,8 +745,8 @@ main {
 }
 
 .game-card:hover {
-  -webkit-box-shadow: 0px 5px 10px 2px rgba(28, 103, 5, 0.15);
-          box-shadow: 0px 5px 10px 2px rgba(28, 103, 5, 0.15);
+  -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.3);
+          box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.3);
 }
 
 .modal {
@@ -830,7 +830,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #222831;
   margin: 1rem 0;
   padding: 2rem 0;
   width: 100%;
@@ -839,6 +838,25 @@ main {
 .modal .screenshot-wrapper h3 {
   color: #00ADB5;
   font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.modal .screenshot-wrapper .screenshot-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal img {
