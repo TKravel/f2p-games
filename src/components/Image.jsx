@@ -1,13 +1,13 @@
-export const Image = ({ data, styles }) => {
+export const Image = ({ data, styles, height, width }) => {
 	return (
 		<div className='image-wrapper'>
 			<img
 				className={styles}
-				height='206'
-				width='365'
+				height={height}
+				width={width}
 				src={data.thumbnail}
 				alt={`${data.title} cover`}
-				sameSite='Strict'
+				samesite='Strict'
 			></img>
 		</div>
 	);

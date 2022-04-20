@@ -427,27 +427,6 @@ margin-left: auto;
 			font-size: 1.5rem;
 		}
 	}
-
-	& .screenshot-wrapper {
-		@include flexContainer($direction: row, $justifyContent: center);
-		margin: 1rem 0;
-		padding: 2rem 0;
-		width: 100%;
-		& h3 {
-			color: $blue-med;
-			font-size: 1.7rem;
-			margin-bottom: 1rem;
-		}
-		& .screenshot-container {
-			@include flexContainer($direction: row, $justifyContent: center);
-		}
-	}
-	& img {
-		height: auto;
-		min-width: 300px;
-		width: 30%;
-		margin: 1rem;
-	}
 	& .specs-wrapper {
 		@include flexContainer($direction: row, $justifyContent: space-around);
 
@@ -495,3 +474,35 @@ margin-left: auto;
 		width: 20rem;
 	}
 }
+
+.screenshot-section-wrapper {
+	width: 100%;
+	& h3 {
+		color: $blue-med;
+		font-size: 1.4rem;
+		font-weight: 700;
+	}
+}
+
+.screenshot-viewer {
+	@include flexContainer($direction: row-reverse, $justifyContent: center);
+	& .thumbnail-container {
+		@include flexContainer($direction: column, $justifyContent: space-around);
+		flex-wrap: nowrap;
+		
+
+	}
+	& .large-screenshot {
+		height: auto;
+		width: 50%;
+	}
+	& .small-screenshots {
+		min-width: 20%;
+		opacity: 1;
+		transition: all 500ms;
+	}
+	& .viewing {
+		opacity: .1;
+	}
+}
+

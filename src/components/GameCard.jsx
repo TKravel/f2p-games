@@ -3,7 +3,7 @@ import { Image } from './Image';
 export const GameCard = ({ gameId, gameData, toggleModal }) => {
 	return (
 		<div className='game-card'>
-			<Image data={gameData} />
+			<Image data={gameData} height='206' width='365' />
 			<div className='bottom-game-card'>
 				<h2>{gameData.title}</h2>
 				<span>{gameData.genre}</span>

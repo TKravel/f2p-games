@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Screenshots } from './modalComponents/Screenshots';
 
 export const Modal = ({ data, closeModal }) => {
 	const [isFullDescription, setIsFullDescription] = useState(false);
@@ -38,19 +39,10 @@ export const Modal = ({ data, closeModal }) => {
 					{isFullDescription ? 'Close' : 'Read full description'}
 				</button>
 			</div>
-			<div className='screenshot-wrapper'>
+
+			<div className='screenshot-section-wrapper'>
 				<h3>Screenshots</h3>
-				<div className='screenshot-container'>
-					{data.screenshots.map((image) => {
-						return (
-							<img
-								key={image.id}
-								src={image.image}
-								samesite='Lax'
-							></img>
-						);
-					})}
-				</div>
+				<Screenshots imgData={data.screenshots} />
 			</div>
 			<div className='specs-wrapper'>
 				<div className='specs-container'>
