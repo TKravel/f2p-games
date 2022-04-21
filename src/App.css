@@ -753,30 +753,31 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   background-color: #222831;
   color: #EEEEEE;
   min-height: 100vh;
   width: 100%;
-  padding: 1rem 0 2rem 0;
+  padding: 3rem 1rem;
   text-align: center;
 }
 
 .modal .close-button {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin-right: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   width: 4rem;
 }
 
@@ -785,9 +786,8 @@ main {
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
           box-shadow: 0px 5px 8px 2px rgba(5, 20, 103, 0.05);
-  padding: 2rem;
-  margin: 2rem 0;
-  width: 70%;
+  margin: 2rem auto;
+  width: 365px;
 }
 
 .modal .description-wrapper h2 {
@@ -879,13 +879,27 @@ main {
 }
 
 .screenshot-section-wrapper {
-  width: 100%;
+  position: relative;
+  border: 3px solid #00ADB5;
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 600px;
 }
 
 .screenshot-section-wrapper h3 {
+  position: absolute;
+  top: 50%;
+  left: -.7rem;
+  letter-spacing: 2px;
+  background-color: #222831;
   color: #00ADB5;
   font-size: 1.4rem;
   font-weight: 700;
+  padding: .5rem 0;
+  text-orientation: sideways-right;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
 }
 
 .screenshot-viewer {
@@ -893,9 +907,9 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -904,40 +918,90 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 1rem;
+}
+
+.screenshot-viewer .large-screenshot-container {
+  width: 600px;
+}
+
+.screenshot-viewer .large-screenshot-container .large-screenshot {
+  height: auto;
+  width: 100%;
 }
 
 .screenshot-viewer .thumbnail-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  padding: 1rem;
+  width: 600px;
 }
 
-.screenshot-viewer .large-screenshot {
-  height: auto;
-  width: 50%;
+.screenshot-viewer .thumbnail-container :last-child {
+  margin: 0 0;
 }
 
-.screenshot-viewer .small-screenshots {
+.small-screenshot-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background-color: #222831;
+  margin: 0 1rem 0 0;
+  min-width: 20%;
+}
+
+.small-screenshot-wrapper .small-screenshots {
   min-width: 20%;
   opacity: 1;
   -webkit-transition: all 500ms;
   transition: all 500ms;
 }
 
-.screenshot-viewer .viewing {
+.small-screenshot-wrapper .viewing {
   opacity: .1;
+}
+
+.small-screenshot-wrapper .viewing-icon {
+  position: absolute;
+  fill: #00ADB5;
+  height: 2px;
+  width: 2px;
+  opacity: 0;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.small-screenshot-wrapper .currently-viewing {
+  height: 30px;
+  width: 30px;
+  opacity: .7;
 }
 /*# sourceMappingURL=App.css.map */

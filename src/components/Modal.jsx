@@ -21,6 +21,11 @@ export const Modal = ({ data, closeModal }) => {
 				Close
 			</button>
 			<div className='description-wrapper'>
+				<img
+					src={data.thumbnail}
+					alt={`${data.title} cover`}
+					samesite='Strict'
+				/>
 				<h2>{data.title}</h2>
 				<p className='description'>
 					{isFullDescription

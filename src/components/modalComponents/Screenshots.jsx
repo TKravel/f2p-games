@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { EyeIcon } from '../../svgs/EyeIcon';
 import { Image } from '../Image';
 export const Screenshots = ({ imgData }) => {
 	const [imgURLs, setImageURLs] = useState();
@@ -43,7 +44,7 @@ export const Screenshots = ({ imgData }) => {
 		<>
 			{!loading && (
 				<div className='screenshot-viewer'>
-					<div>
+					<div className='large-screenshot-container'>
 						<img
 							className='large-screenshot'
 							src={`${mainImg}.jpg`}
@@ -52,17 +53,26 @@ export const Screenshots = ({ imgData }) => {
 					<div className='thumbnail-container'>
 						{imgURLs.map((url, index) => {
 							return (
-								<img
-									key={index}
-									data-src={url}
-									className={
-										url === mainImg
-											? 'small-screenshots viewing'
-											: 'small-screenshots'
-									}
-									src={`${url}-small.jpg`}
-									onClick={handleClick}
-								/>
+								<div className='small-screenshot-wrapper'>
+									<img
+										key={index}
+										data-src={url}
+										className={
+											url === mainImg
+												? 'small-screenshots viewing'
+												: 'small-screenshots'
+										}
+										src={`${url}-small.jpg`}
+										onClick={handleClick}
+									/>
+									<EyeIcon
+										styles={
+											url === mainImg
+												? 'viewing-icon currently-viewing'
+												: 'viewing-icon'
+										}
+									/>
+								</div>
 							);
 						})}
 					</div>
