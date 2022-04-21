@@ -901,6 +901,7 @@ main {
 
 @media screen and (max-width: 575px) {
   .modal-game-card {
+    width: 95%;
     margin: 14rem auto;
   }
 }

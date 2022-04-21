@@ -487,6 +487,7 @@ margin-left: auto;
 		}
 	}
 	@include responsive-mobile {
+		width: 95%;
 		margin: 14rem auto;
 	}
 }
