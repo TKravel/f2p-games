@@ -53,9 +53,11 @@ export const Screenshots = ({ imgData }) => {
 					<div className='thumbnail-container'>
 						{imgURLs.map((url, index) => {
 							return (
-								<div className='small-screenshot-wrapper'>
+								<div
+									key={index}
+									className='small-screenshot-wrapper'
+								>
 									<img
-										key={index}
 										data-src={url}
 										className={
 											url === mainImg
