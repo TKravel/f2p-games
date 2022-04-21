@@ -909,6 +909,12 @@ main {
   }
 }
 
+@media screen and (min-width: 576px) and (max-width: 850px) {
+  .modal-game-card {
+    margin: 7rem auto;
+  }
+}
+
 .modal-game-card:hover {
   -webkit-box-shadow: 0px 5px 8px 2px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 5px 8px 2px rgba(0, 0, 0, 0.3);
@@ -932,6 +938,7 @@ main {
           align-items: center;
   position: relative;
   padding: 1rem;
+  margin: 5rem auto 3rem auto;
   width: 100%;
 }
 
@@ -1198,6 +1205,17 @@ main {
     height: auto;
     padding: 3rem 0 3rem 1rem;
     min-width: 95%;
+  }
+  .specs-wrapper .specs-container h4 {
+    left: -2rem;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 850px) {
+  .specs-wrapper .specs-container {
+    height: auto;
+    padding: 3rem 0 3rem 1rem;
+    width: 50%;
   }
   .specs-wrapper .specs-container h4 {
     left: -2rem;
